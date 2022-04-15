@@ -150,3 +150,37 @@ for(let number of CreateInfiniteNumber()){
     console.log(`Generator : ${number}`);
 }
 
+/**
+ * Generator Part 4 
+ * Delegating Generator
+ * دالة عامة تاخذ جميع قيم ال generators  و تتعامل معها هي 
+ * مثل مندوب عنها
+ */
+ console.log(`${"--".repeat(20)}`);
+ console.log(`---- Delegating Generator  -----`);
+ 
+ function * generaterNumber_2(){
+    yield * [1,2,3];
+ }
+function * generaterNames_2(){
+    yield * ["Ali" , "Ahmad" , "Samer"] ;
+}
+
+function * generaterAll(){
+    yield * generaterNumber_2();
+    yield * generaterNames_2();
+
+}
+let GenAll = generaterAll() ;
+console.log(GenAll.next()); /** Object { value: 1, done: false } */
+console.log(GenAll.next()); /** Object { value: 2, done: false } */
+console.log(GenAll.next()); /** Object { value: 3, done: false } */
+console.log(GenAll.next()); /** Object { value: "Ali", done: false } */
+console.log(GenAll.next()); /** Object { value: "Ahmad", done: false } */
+console.log(GenAll.next()); /** Object { value: "Samer", done: false } */
+console.log(GenAll.next()); /** Object { value: undefined, done: true } */
+
+
+
+
+
