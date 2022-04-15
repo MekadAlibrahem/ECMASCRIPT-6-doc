@@ -26,3 +26,17 @@ import * as all from './app02.js' ;
 console.log(all.myRank);  
 console.log(all.sayHello_2("moduel_2")); 
 console.log(all);/** Object { myRank: 100, sayHello_2: sayHello_2(name), … } */
+
+/**
+ *  Modules Part 3  Named Export vs Defult Export
+ */
+
+import {a1 ,a2} from './app03.js' ;
+// import defult 
+import sayHello_3 from './app03.js';
+
+console.log(sayHello_3);
+
+
+
+
