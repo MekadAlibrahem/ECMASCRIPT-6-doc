@@ -113,7 +113,40 @@ console.log(theNames.next()); /** Object { value: "Ahmad", done: false } */
 console.log(theNames.next()); /** Object { value: "Sayed", done: true } */
 console.log(theNames.next()); /** Object { value: "undefined", done: true } */
 
+/**
+ * Generator Part 3 
+ * Create Infinite Number
+ */
+ console.log(`${"--".repeat(20)}`);
+ console.log(`---- Create Infinite Number  -----`);
 
+ function * CreateInfiniteNumber(){
+     /** Do Not Loop On This */
+     let i = 0 ;
+     while (true){
+         yield i++ ;
+     }
+ }
 
+ let InfiniteIterator = CreateInfiniteNumber();
+ console.log(InfiniteIterator.next()); /** Object { value: 0, done: false } */
+ console.log(InfiniteIterator.next()); /** Object { value: 1, done: false }*/
+ console.log(InfiniteIterator.next()); /** Object { value: 2, done: false } */
 
+for(let number of InfiniteIterator){
+    /** [start : (last value +1 ) in InfiniteIterator.next()  - 20] */
+    if(number >20){
+        break;
+    }
+    console.log(` InfiniteIterator : ${number}`);
+}
+console.log(`${"--".repeat(20)}`);
+
+for(let number of CreateInfiniteNumber()){
+    /** [0-20] */
+    if(number >20){
+        break;
+    }
+    console.log(`Generator : ${number}`);
+}
 
