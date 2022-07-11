@@ -6,7 +6,7 @@
  * startWidth() : هل النص يبدأ بحرف او نص معين 
  * حساسة لحالة الاحرف 
  * starstWith(search Sttring  ,  position = 0) ;
- * endsWith =>  string.endWith( search string  ,  position = string.length ( stop here in this length));
+ * endsWith =>  string.endWith( search string  ,  position = string.length );
  * 
  */
 
